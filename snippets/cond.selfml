@@ -1,0 +1,8 @@
+(name cond)
+
+(trigger
+    (tab cond))
+
+(only-in source.nu)
+
+(snippet [(cond ((%{1="first"}) %{0}))])

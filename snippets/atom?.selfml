@@ -1,0 +1,8 @@
+(name atom?)
+
+(trigger
+    (tab atm?))
+
+(only-in source.nu)
+
+(snippet [(atom? %{0})])

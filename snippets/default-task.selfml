@@ -1,0 +1,8 @@
+(name [default task])
+
+(trigger
+    (tab dtask))
+
+(only-in source.nu)
+
+(snippet [(task "default" => "%{1="default_task"}")])

@@ -1,0 +1,16 @@
+(menu command.execute-line-selection-as-nu
+    ---
+    command.beautify-nu
+    command.documentation-for-word
+    ---
+    (submenu [Classes and Methods] snippet.class --- snippet.ivar snippet.var snippet.ivars snippet.ivar-accessors --- snippet.imethod [snippet.imethod-(-)] snippet.cmethod [snippet.cmethod-(+)] snippet.init snippet.dealloc --- snippet.protocol)
+    (submenu Declarations snippet.global snippet.let snippet.set [snippet.here-string-(escaped)] [snippet.here-string-(unescaped)] --- snippet.do snippet.function snippet.macro snippet.macro-0 snippet.macro-1 ---)
+    (submenu [Flow Control] snippet.if snippet.if-then snippet.if-else snippet.unless snippet.case snippet.cond snippet.else snippet.return)
+    (submenu Iterators snippet.for snippet.until snippet.while)
+    (submenu Commands snippet.append snippet.eval snippet.parse snippet.puts snippet.system snippet.synchronized snippet.list snippet.dict snippet.array snippet.load snippet.quote --- snippet.rand snippet.char? snippet.atom? snippet.number? snippet.list? snippet.null? snippet.pair? snippet.string? snippet.symbol? snippet.reverse snippet.any snippet.apply snippet.assert snippet.map snippet.sort snippet.filelist)
+    (submenu [Exception Handling] snippet.try command.surround-with-try-catch --- snippet.raise-exception snippet.throw snippet.throw*)
+    (submenu Testing snippet.test-class snippet.test-method snippet.setup snippet.teardown --- snippet.assert_equal snippet.assert_not_equal snippet.assert_true snippet.assert_false snippet.assert_greater_than snippet.assert_less_than snippet.assert_throws snippet.assert_in_delta)
+    (submenu Misc snippet.shebang --- [command.insert-((___-alloc)-init)] [snippet.'(])
+    (submenu Debugging snippet.debug-object snippet.debug-string)
+    (submenu Nukefile snippet.task snippet.default-task --- snippet.application-tasks snippet.bundle-tasks snippet.compilation-tasks snippet.dylib-tasks snippet.framework-tasks snippet.library-tasks --- snippet.sh)
+    (submenu nudoc snippet.@abstract snippet.@copyright snippet.@discussion snippet.@file snippet.@header snippet.@info))

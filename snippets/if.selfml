@@ -1,0 +1,9 @@
+(name if)
+
+(trigger
+    (tab if))
+
+(only-in source.nu)
+
+(snippet [(if (%{1})
+	%{0})])

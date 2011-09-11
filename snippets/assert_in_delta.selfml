@@ -1,0 +1,8 @@
+(name assert_in_delta)
+
+(trigger
+    (tab aid))
+
+(only-in source.nu)
+
+(snippet [(assert_in_delta %{1="first"} %{2="second"} %{0="delta"})])

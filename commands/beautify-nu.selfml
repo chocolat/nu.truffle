@@ -1,0 +1,16 @@
+(trigger
+    (key [[ctrl][shift]H]))
+
+(name [Reformat Document / Selection])
+
+(only-in source.nu)
+
+(input selection)
+
+(output replace-selected)
+
+(save nothing)
+
+(script [require_cmd "${TM_NUBILE:=nubile}" "If you have installed Nu, then you need to either update your <tt>PATH</tt> or set the <tt>TM_NUBILE</tt> shell variable (e.g. in Preferences / Advanced)"
+
+$TM_NUBILE])

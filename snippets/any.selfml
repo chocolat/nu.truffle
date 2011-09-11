@@ -1,0 +1,8 @@
+(name any)
+
+(trigger
+    (tab any))
+
+(only-in source.nu)
+
+(snippet [(any %{0="aList"})])

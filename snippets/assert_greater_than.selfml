@@ -1,0 +1,8 @@
+(name assert_greater_than)
+
+(trigger
+    (tab agt))
+
+(only-in source.nu)
+
+(snippet [(assert_greater_than %{1="first"} %{0="second"})])

@@ -1,0 +1,8 @@
+(name pair?)
+
+(trigger
+    (tab pr?))
+
+(only-in source.nu)
+
+(snippet [(pair? %{0})])

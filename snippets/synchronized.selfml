@@ -1,0 +1,9 @@
+(name synchronized)
+
+(trigger
+    (tab sync))
+
+(only-in source.nu)
+
+(snippet [(synchronized %{1="object"}
+	%{0})])

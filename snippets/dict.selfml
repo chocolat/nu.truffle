@@ -1,0 +1,8 @@
+(name dict)
+
+(trigger
+    (tab dict))
+
+(only-in source.nu)
+
+(snippet [(dict %{0})])

@@ -1,0 +1,9 @@
+(name class)
+
+(trigger
+    (tab class))
+
+(only-in source.nu)
+
+(snippet [(class %{1="ClassName"} is %{2="NSObject"}
+	%{0})])

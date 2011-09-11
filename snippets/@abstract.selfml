@@ -1,0 +1,8 @@
+(name @abstract)
+
+(trigger
+    (tab @abs))
+
+(only-in source.nu)
+
+(snippet [;; @abstract %{0}])

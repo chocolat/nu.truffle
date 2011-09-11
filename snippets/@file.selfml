@@ -1,0 +1,8 @@
+(name @file)
+
+(trigger
+    (tab @file))
+
+(only-in source.nu)
+
+(snippet [;; @file %{0}])

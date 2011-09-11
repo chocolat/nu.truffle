@@ -1,0 +1,9 @@
+(name [ivar section])
+
+(trigger
+    (tab ivar))
+
+(only-in source.nu)
+
+(snippet [(ivar (%{1="id"}) %{2="name"} 
+	%{0})])

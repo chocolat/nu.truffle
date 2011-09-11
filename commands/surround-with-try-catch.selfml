@@ -1,0 +1,24 @@
+(trigger
+    (key [[ctrl][alt][cmd]T]))
+
+(name [Surround with try/catch])
+
+(only-in source.nu)
+
+(input nothing nothing)
+
+(output snippet)
+
+(save nothing)
+
+(script [#!/usr/bin/env ruby
+
+selected_text = ENV["TM_SELECTED_TEXT"]
+
+if not selected_text.nil?
+	print "(try\n"
+	print selected_text
+	#STDIN.read.split('\n').each {|line| print "#{line}"}
+	print "\n\t(catch ($1)\n"
+	print "\t\t$0))"
+end])

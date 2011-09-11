@@ -1,0 +1,8 @@
+(name array)
+
+(trigger
+    (tab array))
+
+(only-in source.nu)
+
+(snippet [(array %{0})])

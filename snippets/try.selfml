@@ -1,0 +1,11 @@
+(name try/catch)
+
+(trigger
+    (tab try))
+
+(only-in source.nu)
+
+(snippet [(try 
+	(%{1})
+	(catch (%{2})
+		%{0})])

@@ -1,0 +1,9 @@
+(name unless)
+
+(trigger
+    (tab unl))
+
+(only-in source.nu)
+
+(snippet [(unless (%{1})
+	%{0})])

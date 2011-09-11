@@ -1,0 +1,233 @@
+(root source.nu
+    (zone constant.language.nu
+        (match
+            (list t nil self super YES NO margs)
+            (boundary.both)))
+    (zone constant.numeric.nu
+        (match
+            (regex [\b((0(x|X)[0-9a-fA-F]*)|-?(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b])))
+    (zone constant.character.nu
+        (match
+            (regex [(')(.|\\[nrfbaes]|\\[0-7]{3}|\\x\h{2}|\\u\h{4})(')]
+                (4 punctuation.definition.constant.nu)
+                (1 punctuation.definition.constant.nu))))
+    (zone variable.other.readwrite.instance.nu
+        (match
+            (regex [(@)[a-zA-Z_]\w*]
+                (1 punctuation.definition.variable.nu))))
+    (zone variable.other.readwrite.global.nu
+        (match
+            (regex [(\$)[a-zA-Z_]\w*]
+                (1 punctuation.definition.variable.nu))))
+    (zone support.class.nu
+        (match
+            (regex [\b[A-Z]\w*\b])))
+    (zone comment.nudoc.nu
+        (match
+            (regex [(;.*|#.*)(@(abstract|copyright|discussion|file|header|info).*)]
+                (1 punctuation.definition.comment.nudoc.nu)
+                (2 support.comment.nudoc.nu))))
+    (zone comment.line.semicolon.nu
+        (match
+            (regex [(;).*$\n?]
+                (1 punctuation.definition.comment.nu))))
+    (zone comment.line.hash.nu
+        (match
+            (regex [(#).*$\n?]
+                (1 punctuation.definition.comment.nu))))
+    (zone string.quoted.double.unescaped.nu
+        (start
+            (regex -"
+                (0 punctuation.definition.string.begin.nu)))
+        (end
+            (regex "
+                (0 punctuation.definition.string.end.nu)))
+        (subzones
+            (include @interpolated_nu)))
+    (zone string.quoted.double.escaped.nu
+        (start
+            (regex \+?"
+                (0 punctuation.definition.string.begin.nu)))
+        (end
+            (regex "
+                (0 punctuation.definition.string.end.nu)))
+        (subzones
+            (include @escaped_char)
+            (include @interpolated_nu)))
+    (zone string.unquoted.heredoc.escaped.nu
+        (start
+            (regex [<<[+](.*)]
+                (0 punctuation.definition.string.begin.nu)))
+        (end
+            (regex \1
+                (0 punctuation.definition.string.end.nu)))
+        (subzones
+            (include @escaped_char)
+            (include @interpolated_nu)))
+    (zone string.unquoted.heredoc.unescaped.nu
+        (start
+            (regex [<<[-](.*)]
+                (0 punctuation.definition.string.begin.nu)))
+        (end
+            (regex \1
+                (0 punctuation.definition.string.end.nu)))
+        (subzones
+            (include @interpolated_nu)))
+    (zone string.regexp.nu
+        (start
+            (regex [(/)(?=[^ ])]
+                (1 punctuation.definition.regex.begin.nu)))
+        (end
+            (regex [/[isxlm]*]
+                (0 punctuation.definition.regex.end.nu)))
+        (subzones
+            (zone constant.character.escape.nu
+                (match
+                    (regex \\/)))))
+    (zone meta.class.nu
+        (match
+            (regex [\b(class)\s+((\w|\-|\!|\?)*)(\s+(is)\s+((\w|\-|\!|\?)*))?]
+                (5 keyword.control.is.nu)
+                (1 keyword.control.class.nu)
+                (6 entity.name.function.nu)
+                (2 entity.name.function.nu))))
+    (zone meta.protocol.nu
+        (match
+            (regex [\b(protocol)\s+((\w)*)]
+                (1 keyword.control.protocol.nu)
+                (2 entity.name.function.nu))))
+    (zone meta.import.nu
+        (match
+            (regex [\((import)\s+(\w*)]
+                (1 keyword.control.import.nu)
+                (2 entity.name.type.class.nu))))
+    (zone meta.global.nu
+        (match
+            (regex [\((global)\s+([\w\-]*)]
+                (1 keyword.control.global.nu)
+                (2 variable.other.readwrite.global.nu))))
+    (zone meta.method.nu.zero-args
+        (match
+            (regex [\(([+-]|[ic]method)\s+\((\w+)\)\s+(\w+)\s+(is)]
+                (3 entity.name.function.nu)
+                (4 keyword.control.is.nu)
+                (1 keyword.control.method.nu)
+                (2 storage.type.class.nu))))
+    (zone meta.method.nu.one-arg
+        (match
+            (regex [\(([+-]|[ic]method)\s+\((\w+)\)\s+(\w+\:)\s*\((\w+)\)\s+(\w+)\s+(is)]
+                (3 entity.name.function.nu)
+                (4 storage.type.class.nu)
+                (5 variable.parameter.function.nu)
+                (1 keyword.control.method.nu)
+                (6 keyword.control.is.nu)
+                (2 storage.type.class.nu))))
+    (zone meta.method.nu.two-args
+        (match
+            (regex [\(([+-]|[ic]method)\s+\((\w+)\)\s+(\w+\:)\s*\((\w+)\)\s+(\w+)\s+(\w+\:)\s*\((\w+)\)\s+(\w+)\s+(is)]
+                (7 storage.type.class.nu)
+                (3 entity.name.function.nu)
+                (8 variable.parameter.function.nu)
+                (4 storage.type.class.nu)
+                (9 keyword.control.is.nu)
+                (5 variable.parameter.function.nu)
+                (1 keyword.control.method.nu)
+                (6 entity.name.function.nu)
+                (2 storage.type.class.nu))))
+    (zone meta.method.nu.three-args
+        (match
+            (regex [\(([+-]|[ic]method)\s+\((\w+)\)\s+(\w+\:)\s*\((\w+)\)\s+(\w+)\s+(\w+\:)\s*\((\w+)\)\s+(\w+)\s+(\w+\:)\s*\((\w+)\)\s+(\w+)\s+(is)]
+                (10 storage.type.class.nu)
+                (2 storage.type.class.nu)
+                (3 entity.name.function.nu)
+                (11 variable.parameter.function.nu)
+                (4 storage.type.class.nu)
+                (5 variable.parameter.function.nu)
+                (12 keyword.control.is.nu)
+                (6 entity.name.function.nu)
+                (7 storage.type.class.nu)
+                (8 variable.parameter.function.nu)
+                (1 keyword.control.method.nu)
+                (9 entity.name.function.nu))))
+    (zone meta.ivars.nu
+        (match
+            (regex [\b((ivar)\s+((\w|\-|\!|\?)*)(\s+(is)\s+((\w|\-|\!|\?)*))?|ivars|ivar-accessors)]
+                (5 keyword.control.class.nu)
+                (1 keyword.control.class.nu)
+                (6 entity.name.function.nu)
+                (2 entity.name.function.nu))))
+    (zone meta.function.nu
+        (match
+            (regex [\b(function|macro|macro-0|macro-1)\s+((\w|\-|\!|\?)*)]
+                (1 keyword.control.function-type.nu)
+                (2 entity.name.function.nu))))
+    (zone meta.nukefile.task.nu
+        (match
+            (regex [(task)\s+(\"\w+")\s?(:?)\s?(\"[\w\s]+\")?\s+(is)]
+                (3 keyword.control.colon.nu)
+                (4 storage.description.task.nu)
+                (5 keyword.control.is.nu)
+                (1 keyword.control.task.nu)
+                (2 entity.name.task.nu))))
+    (zone meta.nukefile.task.with-dependencies.nu
+        (match
+            (regex [(task)\s+(\"\w+\")\s?(:)?\s?(\"[\w\s]+\")?\s?(=>?)\s?(\"[\"\w\s]+\")?\s+(is)]
+                (7 keyword.control.is.nu)
+                (3 keyword.control.colon.nu)
+                (4 storage.description.task.nu)
+                (5 keyword.control.arrow.nu)
+                (1 keyword.control.task.nu)
+                (6 support.dependency.task.nu)
+                (2 entity.name.task.nu))))
+    (zone meta.nukefile.default.task.nu
+        (match
+            (regex [(task)\s+(\"default\")\s+(=>)\s+(\"\w+\")]
+                (3 keyword.control.arrow.nu)
+                (4 support.name.task.nu)
+                (5 keyword.control.is.nu)
+                (1 keyword.control.task.nu)
+                (2 entity.name.task.nu))))
+    (zone keyword.control.nu
+        (match
+            (list let set cond case do loop until while for break continue if else elseif then unless try throw catch array dict list return)
+            (boundary.both)))
+    (zone keyword.operator.nu
+        (match
+            (list eq neq and or synchronized not)
+            (boundary.both)))
+    (zone keyword.operator.symbolic.nu
+        (match
+            (regex [[/*+-/&|><=!`@]])))
+    (zone support.function.nu
+        (match
+            (list append atom cons car cdr context eval head quote parse progn send tail load system puts help version beep first rest macrox print)
+            (boundary.both)))
+    (zone support.function.testing.nu
+        (match
+            (list assert_equal assert_not_equal assert_throws assert_in_delta assert_true assert_false assert_less_than assert_greater_than)
+            (boundary.both)))
+    (zone keyword.nukefile.nu
+        (match
+            (list task application-tasks bundle-tasks compilation-tasks dylib-tasks framework-tasks library-tasks)
+            (boundary.both))))
+
+(collection interpolated_nu
+    (zone source.nu.embedded.source
+        (match
+            (regex [#\{(\})]
+                (0 punctuation.section.embedded.nu)
+                (1 source.nu.embedded.source.empty))))
+    (zone source.nu.embedded.source
+        (start
+            (regex [#\{]
+                (0 punctuation.section.embedded.nu)))
+        (end
+            (regex [\}]
+                (0 punctuation.section.embedded.nu)))
+        (subzones
+            (include $self))))
+
+(collection escaped_char
+    (zone constant.character.escape.nu
+        (match
+            (regex [\\([0-7]{3}|x\h{2}|u\h{4}|.)]))))

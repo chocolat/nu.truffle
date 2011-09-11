@@ -1,0 +1,8 @@
+(name reverse)
+
+(trigger
+    (tab rev))
+
+(only-in source.nu)
+
+(snippet [(reverse %{0="aList"})])

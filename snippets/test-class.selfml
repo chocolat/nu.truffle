@@ -1,0 +1,9 @@
+(name [NuTestCase subclass])
+
+(trigger
+    (tab tc))
+
+(only-in source.nu)
+
+(snippet [(class %{1="name"} is NuTestCase
+	%{0})])

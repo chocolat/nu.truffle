@@ -1,0 +1,8 @@
+(name ivars)
+
+(trigger
+    (tab ivs))
+
+(only-in source.nu)
+
+(snippet [(ivars)])

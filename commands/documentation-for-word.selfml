@@ -1,0 +1,19 @@
+(trigger
+    (key [[ctrl]H]))
+
+(name [Documentation For Word])
+
+(only-in source.nu)
+
+(input selection word)
+
+(output tooltip)
+
+(save nothing)
+
+(script [require_cmd "${TM_NUSH:=nush}" "If you have installed Nu, then you need to either update your <tt>PATH</tt> or set the <tt>TM_NUSH</tt> shell variable (e.g. in Preferences / Advanced)"
+
+read s
+$TM_NUSH -e "(puts (help $s))"
+
+])

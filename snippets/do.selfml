@@ -1,0 +1,9 @@
+(name do)
+
+(trigger
+    (tab do))
+
+(only-in source.nu)
+
+(snippet [(do (%{1="params"})
+	%{0})])

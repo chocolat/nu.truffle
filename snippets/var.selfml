@@ -1,0 +1,8 @@
+(name [new ivar])
+
+(trigger
+    (tab var))
+
+(only-in source.nu)
+
+(snippet [(%{1="id"}) %{0="name"}])

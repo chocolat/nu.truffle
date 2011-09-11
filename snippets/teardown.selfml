@@ -1,0 +1,9 @@
+(name teardown)
+
+(trigger
+    (tab down))
+
+(only-in source.nu)
+
+(snippet [(imethod (id) teardown is
+	%{0})])

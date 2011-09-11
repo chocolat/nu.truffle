@@ -1,0 +1,9 @@
+(name task)
+
+(trigger
+    (tab task))
+
+(only-in source.nu)
+
+(snippet [(task "%{1="name"}" %{2=": "%{3="description"}" "}%{4="=> "%{5="dependency"}" "}is
+	%{0})])

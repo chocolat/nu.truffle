@@ -1,0 +1,8 @@
+(name library-tasks)
+
+(trigger
+    (tab ltks))
+
+(only-in source.nu)
+
+(snippet [(library-tasks)])

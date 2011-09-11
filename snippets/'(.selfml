@@ -1,0 +1,8 @@
+(name ['(])
+
+(trigger
+    (tab [(]))
+
+(only-in source.nu)
+
+(snippet ['(])

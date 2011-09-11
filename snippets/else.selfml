@@ -1,0 +1,8 @@
+(name else)
+
+(trigger
+    (tab else))
+
+(only-in source.nu)
+
+(snippet [(else %{0})])

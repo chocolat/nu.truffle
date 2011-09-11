@@ -1,0 +1,8 @@
+(name puts)
+
+(trigger
+    (tab puts))
+
+(only-in source.nu)
+
+(snippet [(puts %{0})])

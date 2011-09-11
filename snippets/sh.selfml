@@ -1,0 +1,8 @@
+(name SH)
+
+(trigger
+    (tab SH))
+
+(only-in source.nu)
+
+(snippet [(SH "%{1}")])

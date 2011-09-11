@@ -1,0 +1,8 @@
+(name parse)
+
+(trigger
+    (tab parse))
+
+(only-in source.nu)
+
+(snippet [(parse "(%{0})")])

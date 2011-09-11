@@ -1,0 +1,9 @@
+(name case)
+
+(trigger
+    (tab case))
+
+(only-in source.nu)
+
+(snippet [(case %{1="expression"}
+	(%{2="first"} %{0}))])

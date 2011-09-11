@@ -1,0 +1,10 @@
+(name if/else)
+
+(trigger
+    (tab ifelse))
+
+(only-in source.nu)
+
+(snippet [(if (%{1})
+    %{2}
+    (else %{0}))])

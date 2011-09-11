@@ -1,0 +1,6 @@
+(name [{ override in empty embedded])
+
+(trigger
+    (key [[shift]{]))
+
+(only-in source.nu.embedded.source.empty)

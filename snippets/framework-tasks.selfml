@@ -1,0 +1,8 @@
+(name framework-tasks)
+
+(trigger
+    (tab ftks))
+
+(only-in source.nu)
+
+(snippet [(framework-tasks)])

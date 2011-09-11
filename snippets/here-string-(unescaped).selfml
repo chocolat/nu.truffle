@@ -1,0 +1,9 @@
+(name [here string (unescaped)])
+
+(trigger
+    (tab <<-))
+
+(only-in source.nu)
+
+(snippet [<<-%{1="identifier"}
+%{0}%{1/(.*)\n(?m:.*)/$1/})])

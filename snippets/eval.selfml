@@ -1,0 +1,8 @@
+(name eval)
+
+(trigger
+    (tab eval))
+
+(only-in source.nu)
+
+(snippet [(eval (%{0}))])

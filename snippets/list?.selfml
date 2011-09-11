@@ -1,0 +1,8 @@
+(name list?)
+
+(trigger
+    (tab lst?))
+
+(only-in source.nu)
+
+(snippet [(list? %{0})])

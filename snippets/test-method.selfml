@@ -1,0 +1,9 @@
+(name [test method])
+
+(trigger
+    (tab test))
+
+(only-in source.nu)
+
+(snippet [(imethod (id) test%{1} is
+	%{0})])

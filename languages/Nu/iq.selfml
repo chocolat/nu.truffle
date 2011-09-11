@@ -1,0 +1,39 @@
+(detector
+    (extension nu)
+    (extension Nukefile))
+
+(detector
+    (content-matches [^#!/.*\bnush\b]))
+
+(folding
+    (start [\(])
+    (stop [\)]))
+
+(shell-variables
+    (TM_COMMENT_START [; ])
+    (TM_COMMENT_START_2 [# ]))
+
+(comment.line [; ])
+
+(comment.line [# ])
+
+(pair "
+    "
+    (smart-typing))
+
+(pair `[`
+    `]`
+    (smart-typing)
+    (highlight))
+
+(pair [(]
+    [)]
+    (smart-typing)
+    (highlight))
+
+(pair [{]
+    [}]
+    (smart-typing)
+    (highlight))
+
+(indentation.increase [^.*\(.*[^)"]$])

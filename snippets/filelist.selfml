@@ -1,0 +1,8 @@
+(name filelist)
+
+(trigger
+    (tab flist))
+
+(only-in source.nu)
+
+(snippet [(filelist "%{0="pattern"}")])

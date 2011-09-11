@@ -1,0 +1,8 @@
+(name throw*)
+
+(trigger
+    (tab thr*))
+
+(only-in source.nu)
+
+(snippet [(throw* "%{1="type"}" "%{0="reason"}")])

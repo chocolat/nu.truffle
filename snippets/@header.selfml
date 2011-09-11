@@ -1,0 +1,8 @@
+(name @header)
+
+(trigger
+    (tab @head))
+
+(only-in source.nu)
+
+(snippet [;; @header %{0}])

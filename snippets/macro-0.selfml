@@ -1,0 +1,9 @@
+(name macro-0)
+
+(trigger
+    (tab mac0))
+
+(only-in source.nu)
+
+(snippet [(macro-0 %{1="name"} %{2="(%{3="args"})"}
+	%{0})])

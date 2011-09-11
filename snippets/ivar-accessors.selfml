@@ -1,0 +1,8 @@
+(name ivar-accessors)
+
+(trigger
+    (tab ivac))
+
+(only-in source.nu)
+
+(snippet [(ivar-accessors)])

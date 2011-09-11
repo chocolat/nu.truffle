@@ -1,0 +1,8 @@
+(name rand)
+
+(trigger
+    (tab rand))
+
+(only-in source.nu)
+
+(snippet [(rand %{0})])

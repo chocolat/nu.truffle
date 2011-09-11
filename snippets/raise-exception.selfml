@@ -1,0 +1,8 @@
+(name [raise exception])
+
+(trigger
+    (tab raise))
+
+(only-in source.nu)
+
+(snippet [(NSException raise:"%{1}" format:"%{0}")])

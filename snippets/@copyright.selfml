@@ -1,0 +1,8 @@
+(name @copyright)
+
+(trigger
+    (tab @copy))
+
+(only-in source.nu)
+
+(snippet [;; @copyright %{0}])

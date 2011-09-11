@@ -1,0 +1,10 @@
+(name assert_throws)
+
+(trigger
+    (tab ath))
+
+(only-in source.nu)
+
+(snippet [(assert_throws "%{1}"
+	(do (%{2}) 
+		%{0}))])

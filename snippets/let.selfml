@@ -1,0 +1,9 @@
+(name let)
+
+(trigger
+    (tab let))
+
+(only-in source.nu)
+
+(snippet [(let (%{1})
+	%{0})])

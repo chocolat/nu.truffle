@@ -1,0 +1,9 @@
+(name imethod)
+
+(trigger
+    (tab imeth))
+
+(only-in source.nu)
+
+(snippet [(imethod (%{1="id"}) %{2="name"}%{3=":(%{4="id"})%{5="%{4/(NS([AEIOQUY])?(\w+).*)|(.)?.*/(?1:a(?2:n$2)$3: (?4:anArgument))/}"}"} is
+	%{0})])

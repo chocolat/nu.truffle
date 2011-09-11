@@ -1,0 +1,8 @@
+(name [#!/usr/bin/env nush])
+
+(trigger
+    (tab [#!]))
+
+(only-in source.nu)
+
+(snippet [#!/usr/bin/env nush])

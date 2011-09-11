@@ -1,0 +1,9 @@
+(name while)
+
+(trigger
+    (tab while))
+
+(only-in source.nu)
+
+(snippet [(while (%{1="condition"})
+	%{0})])

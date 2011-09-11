@@ -1,0 +1,9 @@
+(name if/then)
+
+(trigger
+    (tab ifthen))
+
+(only-in source.nu)
+
+(snippet [(if (%{1})
+    (then %{0}))])

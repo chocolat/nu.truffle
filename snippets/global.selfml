@@ -1,0 +1,8 @@
+(name global)
+
+(trigger
+    (tab global))
+
+(only-in source.nu)
+
+(snippet [(global %{1="symbol"} %{0="value"})])

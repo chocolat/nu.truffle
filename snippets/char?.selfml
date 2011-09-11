@@ -1,0 +1,8 @@
+(name char?)
+
+(trigger
+    (tab ch?))
+
+(only-in source.nu)
+
+(snippet [(char? %{0})])

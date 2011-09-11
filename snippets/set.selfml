@@ -1,0 +1,8 @@
+(name set)
+
+(trigger
+    (tab set))
+
+(only-in source.nu)
+
+(snippet [(set %{1="symbol"} %{0="value"})])

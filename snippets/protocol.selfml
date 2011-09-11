@@ -1,0 +1,9 @@
+(name protocol)
+
+(trigger
+    (tab proto))
+
+(only-in source.nu)
+
+(snippet [(protocol %{1="ProtocolName"}
+	%{0})])

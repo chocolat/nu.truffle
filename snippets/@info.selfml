@@ -1,0 +1,8 @@
+(name @info)
+
+(trigger
+    (tab @info))
+
+(only-in source.nu)
+
+(snippet [;; @info %{0}])

@@ -1,0 +1,8 @@
+(name @discussion)
+
+(trigger
+    (tab @disc))
+
+(only-in source.nu)
+
+(snippet [;; @discussion %{0}])

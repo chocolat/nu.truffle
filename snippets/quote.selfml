@@ -1,0 +1,8 @@
+(name quote)
+
+(trigger
+    (tab quote))
+
+(only-in source.nu)
+
+(snippet [(quote (%{0}))])

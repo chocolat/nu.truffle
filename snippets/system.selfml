@@ -1,0 +1,8 @@
+(name system)
+
+(trigger
+    (tab sys))
+
+(only-in source.nu)
+
+(snippet [(system "%{0}")])

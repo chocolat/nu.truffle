@@ -1,0 +1,8 @@
+(name bundle-tasks)
+
+(trigger
+    (tab btks))
+
+(only-in source.nu)
+
+(snippet [(bundle-tasks)])

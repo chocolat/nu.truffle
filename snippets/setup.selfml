@@ -1,0 +1,9 @@
+(name setup)
+
+(trigger
+    (tab up))
+
+(only-in source.nu)
+
+(snippet [(imethod (id) setup is
+	%{0})])

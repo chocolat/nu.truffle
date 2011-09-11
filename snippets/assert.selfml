@@ -1,0 +1,8 @@
+(name assert)
+
+(trigger
+    (tab asrt))
+
+(only-in source.nu)
+
+(snippet [(assert %{0="expression"})])

@@ -1,0 +1,8 @@
+(name assert_false)
+
+(trigger
+    (tab af))
+
+(only-in source.nu)
+
+(snippet [(assert_false %{0})])

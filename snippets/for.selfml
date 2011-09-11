@@ -1,0 +1,9 @@
+(name for)
+
+(trigger
+    (tab for))
+
+(only-in source.nu)
+
+(snippet [(for ((%{1="initialize"}) (%{2="test"}) (%{3="modify"}))
+	%{0})])

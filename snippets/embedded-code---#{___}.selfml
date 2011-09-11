@@ -1,0 +1,8 @@
+(name [embedded code - #{...}])
+
+(trigger
+    (key [[shift]#]))
+
+(only-in [(source.nu string.quoted.double | source.nu string.unquoted.heredoc) - string source])
+
+(snippet [#{%{1="%{TM_SELECTED_TEXT}"}}])

@@ -1,0 +1,8 @@
+(name compilation-tasks)
+
+(trigger
+    (tab ctks))
+
+(only-in source.nu)
+
+(snippet [(compilation-tasks)])

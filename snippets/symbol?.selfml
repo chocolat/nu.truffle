@@ -1,0 +1,8 @@
+(name symbol?)
+
+(trigger
+    (tab sym?))
+
+(only-in source.nu)
+
+(snippet [(symbol? %{0})])

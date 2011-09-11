@@ -1,0 +1,11 @@
+(name init)
+
+(trigger
+    (tab init))
+
+(only-in source.nu)
+
+(snippet [(%{1="imethod"} (id) init is
+			(super init)
+			%{0}
+			(return self))])

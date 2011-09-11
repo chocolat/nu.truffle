@@ -1,0 +1,18 @@
+(trigger
+    (key [[ctrl][shift]E]))
+
+(name [Execute Line / Selection as Nu])
+
+(only-in source.nu)
+
+(input selection line)
+
+(output after-selected)
+
+(save nothing)
+
+(script [require_cmd "${TM_NUSH:=nush}" "If you have installed Nu, then you need to either update your <tt>PATH</tt> or set the <tt>TM_NUSH</tt> shell variable (e.g. in Preferences / Advanced)"
+
+read s
+$TM_NUSH -e "$s"
+])

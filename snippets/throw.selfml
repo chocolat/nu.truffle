@@ -1,0 +1,10 @@
+(name throw)
+
+(trigger
+    (tab thr))
+
+(only-in source.nu)
+
+(snippet [(throw ((NSException alloc) initWithName:"%{1="name"}"
+                    reason:"%{2="reason"}"
+                    userInfo:%{0="nil"}))])

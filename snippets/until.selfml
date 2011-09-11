@@ -1,0 +1,9 @@
+(name until)
+
+(trigger
+    (tab until))
+
+(only-in source.nu)
+
+(snippet [(until (%{1="condition"})
+	%{0})])

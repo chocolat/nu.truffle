@@ -1,0 +1,8 @@
+(name dylib-tasks)
+
+(trigger
+    (tab dtks))
+
+(only-in source.nu)
+
+(snippet [(dylib-tasks)])

@@ -1,0 +1,8 @@
+(name assert_less_than)
+
+(trigger
+    (tab alt))
+
+(only-in source.nu)
+
+(snippet [(assert_less_than %{1="first"} %{0="second"})])

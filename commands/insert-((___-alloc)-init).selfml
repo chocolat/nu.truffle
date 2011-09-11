@@ -1,0 +1,31 @@
+(trigger
+    (tab alloc))
+
+(name [Insert ((... alloc) init)])
+
+(only-in source.nu)
+
+(input selection line)
+
+(output snippet)
+
+(save nothing)
+
+(script [#!/usr/bin/env ruby
+
+def e (str); str.gsub(/\($`\\\)/, '\\\\\0'); end
+
+line = STDIN.read
+col = ENV['TM_LINE_INDEX'].to_i
+
+left, right = line[0...col], line[col..-1]
+
+if left =~ /(.*?)(\w+)\s+$/ then
+  lead, cl = $1, $2
+  print "#{e lead}((#{e cl} alloc) init$0)"
+  print right.empty? ? "" : "#{e right}"
+else
+  # this is only if we were not able to interpret the line
+  print "#{e left}$0#{e right}"
+end
+])

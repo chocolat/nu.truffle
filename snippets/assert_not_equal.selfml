@@ -1,0 +1,8 @@
+(name assert_not_equal)
+
+(trigger
+    (tab ane))
+
+(only-in source.nu)
+
+(snippet [(assert_not_equal %{1="first"} %{0="second"})])

@@ -1,0 +1,10 @@
+(name dealloc)
+
+(trigger
+    (tab dealloc))
+
+(only-in source.nu)
+
+(snippet [(imethod (void) dealloc is
+	%{0}
+	(super dealloc))])

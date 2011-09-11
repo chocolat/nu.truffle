@@ -1,0 +1,8 @@
+(name [debug object])
+
+(trigger
+    (tab dobj))
+
+(only-in source.nu)
+
+(snippet [(puts "\n************** #{%{1}} *****************\n")%{0}])
